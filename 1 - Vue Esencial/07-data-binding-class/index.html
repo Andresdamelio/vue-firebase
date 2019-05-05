@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data binding clases y atributos</title>
+
+    <style>
+        li{
+            cursor: pointer;
+            color: crimson;
+        }
+
+        .completado{
+            text-decoration: line-through; 
+            color: cornflowerblue;
+        }
+    
+    </style>
+</head>
+<body>
+    <main id="app">
+        <h3>Tareas completadas: {{ tareasCompletadas }}</h3>
+        <ul>
+            <li v-bind:class="{completado: tarea.completado}"
+                @click="completarTarea(tarea)"
+                v-for="tarea in tareas">
+                {{ tarea.titulo }}
+            </li>
+        </ul>
+    </main>
+
+    <script src="https://unpkg.com/vue@2.6.9/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

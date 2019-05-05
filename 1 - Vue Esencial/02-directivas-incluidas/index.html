@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directivas incluidas</title>
+</head>
+<body>
+    <main id="app">
+        <h1 v-show="conectado">Estoy conectado</h1>
+        <h2 v-if="edad < 18">No puedes entrar</h2>
+        <h2 v-else-if="edad > 200">Eres inmortal</h2>
+        <h2 v-else>Puedes entrar</h2>
+        <template v-if="conectado">
+            <h3>Bienvenido andres</h3>
+            <ul>
+                <li>Inicio</li>
+                <li>Sobre mi</li>
+                <li>Contacto</li>
+            </ul>
+        </template>
+        <h4 v-else>No estas conectado :(</h4>
+    </main>
+
+    <script src="https://unpkg.com/vue@2.6.9/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!-- 
+    v-show - esta propiedad oculta el elemento, mas no lo elimina
+    del DOM, es decir, agrega la propiedad display:none
+    
+    v-if - es muy paracido al anterior, a diferencia que lo elimina
+    por completo del DOM
+
+    template v-if
+        Si quieres mostrar cierto contenido con una misma condición,
+        puedes utilizar los template que te permiten agregar conte-
+        nido
+
+        <template v-if="condicion"> contenido </template>
+
+-->

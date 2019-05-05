@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos</title>
+</head>
+<body>
+    
+    <main id="app">
+
+        <form v-on:submit.prevent="agregarTarea">
+            <input type="text" placeholder="Agrega una nueva tarea" v-model="nuevaTarea">
+            <button>Enviar tarea</button>
+        </form>
+
+        
+
+        <ul>
+            <li v-for="tarea in tareas">
+                {{ tarea }}
+            </li>
+        </ul>
+
+    </main>
+
+    <script src="https://unpkg.com/vue@2.6.9/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
