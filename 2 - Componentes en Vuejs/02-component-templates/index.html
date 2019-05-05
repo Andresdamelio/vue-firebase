@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introducción a los componentes Vuejs</title>
+</head>
+<body>
+    <!-- template definido en el componente -->
+    <main id="app">
+        <elegir-ganador :listado="personas"></elegir-ganador>
+    </main>
+
+    <!-- Definir template  en linea-->
+    <!-- 
+        En este caso, no de debe colocar el atributo template en la definicion del componente
+    -->
+    <!-- <main id="app">
+        <elegir-ganador :listado="personas" inline-template>
+            <template id="elegir-ganador-template">
+                <div>
+                    <h1 v-if="ganador"> El ganador es: {{ ganador }}</h1>
+                    <template v-else>
+                        <h1>Participantes</h1>
+                        <ul>
+                            <li v-for="persona in listado">{{ persona }}</li>
+                        </ul>
+                    </template>
+                    <button @click="elegirGanador">Elegir Ganador</button>
+                </div> 
+            </template>
+        </elegir-ganador>
+    </main> -->
+
+    <!-- Definir un template dentro de una tag template -->
+    <!-- <template id="elegir-ganador-template">
+        <div>
+            <h1 v-if="ganador"> El ganador es: {{ ganador }}</h1>
+            <template v-else>
+                <h1>Participantes</h1>
+                <ul>
+                    <li v-for="persona in listado">{{ persona }}</li>
+                </ul>
+            </template>
+            <button @click="elegirGanador">Elegir Ganador</button>
+        </div> 
+    </template> -->
+
+    <!--  Definir un template dentro de un scrip-->
+    <!-- <script type="text/template" id="elegir-ganador-template">
+        <div>
+            <h1 v-if="ganador"> El ganador es: {{ ganador }}</h1>
+            <template v-else>
+               <h1>Participantes</h1>
+               <ul>
+                    <li v-for="persona in listado">{{ persona }}</li>
+                </ul>
+            </template>
+            <button @click="elegirGanador">Elegir Ganador</button>
+        </div> 
+    </script> -->
+
+    <script src="https://unpkg.com/vue@2.6.9/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
