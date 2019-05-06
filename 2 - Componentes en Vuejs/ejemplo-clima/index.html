@@ -18,7 +18,7 @@
             </div> 
         </form>
 
-        <datos-clima v-if="busqueda" :nombre="nombre" :temperatura="temperatura" :clima="clima">
+        <datos-clima v-if="busqueda" :nombre="nombre" :temperatura="temperatura" :clima="clima" :codigo="codigo">
 
         </datos-clima>
     </main>
@@ -26,12 +26,14 @@
     <template  id="clima-ciudad">
         <div class="card ml-3 border-primary" style="max-width: 540px;">
             <div class="row no-gutters">
+                <div class="card-header col-12 pl-4 pb-2" >
+                    <h5 class="card-title"><img :src=`https://www.countryflags.io/${codigo}/shiny/32.png`> - {{ nombre }}</h5>   
+                </div>
                 <div class="col-md-4">
-                <img :src=`http://openweathermap.org/img/w/${clima.icon}.png` class="card-img">
+                    <img :src=`http://openweathermap.org/img/w/${clima.icon}.png` class="card-img">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{ nombre }}</h5>
                         <p class="card-text">
                             <ul class="list-group">
                                 <li>
