@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-      <contador :cantidad="cantidad"
+      <!-- <contador :cantidad="cantidad"
                 @aumentar="cantidad++"
                 @reducir="cantidad--">
 
-      </contador>
+      </contador> -->
+
+      <contador></contador>
   </div>
 </template>
 
@@ -15,11 +17,6 @@ export default {
   name: 'app',
   components: {
     Contador
-  },
-  data() {
-    return {
-      cantidad: 0,
-    }
   },
 }
 </script>

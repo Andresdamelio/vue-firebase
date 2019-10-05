@@ -8,14 +8,21 @@
 
 <script>
 export default {
-    props: ['cantidad'],
+    //props: ['cantidad'],
     methods: {
         aumentar(){
-            this.$emit('aumentar')
+            //this.$emit('aumentar')
+            this.$store.state.cantidad++;
         },
         reducir(){
-            this.$emit('reducir')
+            //this.$emit('reducir')
+            this.$store.state.cantidad--;
         }
-    }
+    },
+    computed: {
+        cantidad(){
+            return this.$store.state.cantidad;
+        }
+    },
 }
 </script>
