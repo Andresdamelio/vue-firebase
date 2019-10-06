@@ -1,5 +1,6 @@
 <template>
   <main>
+      <tareas-restantes></tareas-restantes>
       <ul>
         <li v-for="tarea in tareas" :key="tarea.id">{{ tarea. nombre }}</li>
       </ul>
@@ -7,11 +8,12 @@
 </template>
 
 <script>
+import TareasRestantes from './components/TareasRestantes';
+import { mapState } from 'vuex';
+
 export default {
-  computed: {
-    tareas(){
-      return this.$store.state.tareas;
-    }
-  },
+  components:{TareasRestantes},
+  computed: mapState(['tareas'])
 }
+
 </script>
