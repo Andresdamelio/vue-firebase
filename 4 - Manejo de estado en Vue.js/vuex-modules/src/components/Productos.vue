@@ -9,7 +9,7 @@
         <hr>
         <ul>
             <li v-for="(producto, indice) in productos" :key="indice">
-                {{ producto.nombre }} - {{ producto.precio.toFixed(2) + ' $' }}
+                {{ producto.nombre }} - {{ producto.precio + ' $' }}
                 <button @click="comprarProducto(indice)">+</button>
             </li>
         </ul>

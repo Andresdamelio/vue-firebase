@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import productos from './modules/productos';
+import carro from './modules/carro';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-    state: {
+    /* state: {
         productos: [
             {nombre: 'Steam Link', precio: 50},
             {nombre: 'Steam Controller', precio: 59},
@@ -21,5 +23,9 @@ export const store = new Vuex.Store({
         anadirProducto: (state, producto) => state.productos.unshift(producto),
         comprarProducto: (state, indice) => state.carro.unshift(state.productos[indice]),
         eliminarProducto: (state, indice) => state.carro.splice(indice, 1),
+    }, */
+    modules:{
+        productos,
+        carro
     }
 });
