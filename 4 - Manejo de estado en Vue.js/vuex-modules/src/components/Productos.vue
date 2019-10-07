@@ -9,8 +9,8 @@
         <hr>
         <ul>
             <li v-for="(producto, indice) in productos" :key="indice">
-                {{ producto.nombre }} - {{ producto.precio + ' $' }}
-                <button @click="comprarProducto(indice)">+</button>
+                {{ producto.nombre }} - {{ producto.precio.toFixed(2) + ' $' }}
+                <button @click="comprarProducto(producto)">+</button>
             </li>
         </ul>
     </section>
@@ -28,10 +28,10 @@ export default {
             precio: 0
         }
     },
-    computed: mapState(['productos']),
+    computed: mapState('productos',['productos']),
     methods: {
         anadir(){
-            this.$store.commit('anadirProducto', {
+            this.$store.commit('productos/anadirProducto', {
                 nombre: this.nombre,
                 precio: Number(this.precio)
             })
@@ -40,7 +40,7 @@ export default {
             this.precio = 0;
         },
 
-        ...mapMutations(['comprarProducto'])
+        ...mapMutations('carro', ['comprarProducto'])
     }
 }
 </script>

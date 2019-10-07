@@ -20,9 +20,9 @@ import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default {
     computed: {
-        ...mapGetters(['totalCompra']),
-        ...mapState(['carro'])
+        ...mapGetters('carro', ['totalCompra']),
+        ...mapState('carro', ['carro'])
     },
-    methods: mapMutations(['eliminarProducto'])
+    methods: mapMutations('carro', ['eliminarProducto'])
 }
 </script>
